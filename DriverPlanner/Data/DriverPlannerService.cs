@@ -59,7 +59,6 @@ namespace DriverPlanner.Data
 					}
 
 					#endregion
-
 					#region CheckForInstructor
 					var findedInstructor = db.Instructors.Where(t => t.Login == login && t.HashPass == hashPasssword).Include(t=>t.Car).Select(t =>
 					 new
@@ -94,7 +93,6 @@ namespace DriverPlanner.Data
 						return (2, instructor);
 					}
 					#endregion
-
 					#region CheckForAdmin
 					var findedAdmin = db.Admins.Where(t => t.Login == login && t.HashPass == hashPasssword).Select(t =>
 					new
@@ -141,31 +139,31 @@ namespace DriverPlanner.Data
 					#region ForUserTable
 					var resEmailInUser = ctx.Users.Where(t => t.UserEMAIL == newUser.UserEMAIL).FirstOrDefault();
 					if (resEmailInUser != null) 
-						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с такой почтой уже зарегистрирован"));
+						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с такой почтой уже есть"));
 
 					var resLoginInUser = ctx.Users.Where(t => t.Login == newUser.Login).FirstOrDefault();
 					if (resLoginInUser != null) 
-						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с таким логином уже зарегистрирован"));
+						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с таким логином уже есть"));
 					#endregion
 
 					#region ForInstructorstable
 					var resEmailInIstructor = ctx.Instructors.Where(t => t.InstructorEMAIL == newUser.UserEMAIL).FirstOrDefault();
 					if (resEmailInIstructor != null) 
-						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с такой почтой уже зарегистрирован"));
+						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с такой почтой уже есть"));
 
 					var resLoginInInstructor = ctx.Instructors.Where(t => t.Login == newUser.Login).FirstOrDefault();
 					if (resLoginInInstructor != null) 
-						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с таким логином уже зарегистрирован"));
+						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с таким логином уже есть"));
 					#endregion
 
 					#region ForAdmintable
 					var resEmailInAdmin = ctx.Admins.Where(t => t.AdminEmail == newUser.UserEMAIL).FirstOrDefault();
 					if (resEmailInAdmin != null) 
-						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с такой почтой уже зарегистрирован"));
+						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с такой почтой уже есть"));
 
 					var resLoginInAdmin = ctx.Admins.Where(t => t.Login == newUser.Login).FirstOrDefault();
 					if (resLoginInAdmin != null) 
-						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с таким логином уже зарегистрирован"));
+						throw new FaultException<EmailDuplicateException>(new EmailDuplicateException(newUser.UserEMAIL), new FaultReason("Аккаунт с таким логином уже есть"));
 					#endregion
 
 					#endregion

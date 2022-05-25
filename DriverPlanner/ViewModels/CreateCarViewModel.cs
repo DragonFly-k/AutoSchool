@@ -60,7 +60,7 @@ namespace DriverPlanner.ViewModels
 
 		private string _carName;
 		[Required(ErrorMessage = "Не введено название авто")]
-		[MinLength(5, ErrorMessage = "Минимальная длинна названия - 5 символов")]
+		[MinLength(4, ErrorMessage = "Минимальная длинна названия - 4 символа")]
 		[MaxLength(20, ErrorMessage = "Максимальная длинна названия - 20 символов")]
 		public string CarName
 		{

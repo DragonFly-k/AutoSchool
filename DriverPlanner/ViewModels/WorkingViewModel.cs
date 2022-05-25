@@ -93,7 +93,7 @@ namespace DriverPlanner.ViewModels
 			}
 			else if ((string)p == "UserExp")
 			{
-				CurrentVM = new UsersExplorerViewModel();
+			    CurrentVM = new UsersExplorerViewModel();
 			}
 			else if ((string)p == "AutoPark")
 			{

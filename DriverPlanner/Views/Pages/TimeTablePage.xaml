@@ -45,7 +45,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Calendar SelectedDate="{Binding SelectedDate}" Padding="0" Background="White" VerticalAlignment="Top" Height="310" Width="310" Margin="-4, -5, 0, 0" HorizontalAlignment="Left" Focusable="False" Grid.Column="1" Style="{StaticResource StyleCalendar}"/>
+        <Calendar SelectedDate="{Binding SelectedDate}" Padding="0" Background="White" VerticalAlignment="Top" Height="310" Width="310" Margin="-4, -5, 0, 0" HorizontalAlignment="Left" Focusable="False" Grid.Column="1" Style="{StaticResource StyleCalender}"/>
         <Grid Width="310" Background="{StaticResource ModernBG}" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>

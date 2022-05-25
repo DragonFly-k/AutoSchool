@@ -12,8 +12,8 @@ namespace DriverPlanner.Infrastructure.Attribute
 		public override bool IsValid(object value)
 		{
 			DateTime birthDate = (DateTime)value;
-			if (birthDate>=DateTime.Today || birthDate.Year < DateTime.Today.Year - 120)
-			{
+            if (birthDate >= DateTime.Today || birthDate.Year < DateTime.Today.Year - 100 || birthDate.Year > DateTime.Today.Year-16)
+            {
 				ErrorMessage = "Ваш возраст не соответствует требованиям";
 				return false;
 			}

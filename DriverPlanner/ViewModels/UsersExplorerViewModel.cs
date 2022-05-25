@@ -4,6 +4,7 @@ using System.Windows.Input;
 using DriverPlanner.Command;
 using DriverPlanner.Data;
 using DriverPlanner.Entities;
+using DriverPlanner.Models.Classes;
 using DriverPlanner.ViewModels.Base;
 
 namespace DriverPlanner.ViewModels
@@ -17,7 +18,6 @@ namespace DriverPlanner.ViewModels
 				RemoveUserCommand = new LambdaCommand(OnExecuteRemoveUserCommand, CanExecuteRemoveUserCommand);
 				UserList = new ObservableCollection<User>(dps.GetUsers());
 				SelectedIndex = -1;
-			
 			}
 		}
 

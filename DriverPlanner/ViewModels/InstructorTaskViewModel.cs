@@ -30,6 +30,13 @@ namespace DriverPlanner.ViewModels
 				if (TaskList != null && TaskList.Count != 0) SelectedIndex = 0;
 			}
 		}
+        
+		private byte[] _userImage;
+		public byte[] UserImage
+		{
+			get { return _userImage; }
+			set { Set(ref _userImage, value); }
+		}
 
 		private int _selectedIndex;
 
@@ -59,6 +66,17 @@ namespace DriverPlanner.ViewModels
 			set 
 			{
 				Set(ref _selectedTask, value);
+				if (_selectedTask != null)
+				{
+					using (var dps = new DriverPlannerService())
+					{
+						UserImage = dps.GetImage(_selectedTask.User.ImageIndex);
+					}
+				}
+				else
+				{
+					UserImage = null;
+				}
 			}
 		}
 
